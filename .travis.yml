@@ -9,7 +9,8 @@ before_install:
   - sudo docker pull centos:centos6
 
 install:
-  - sudo docker run --name centos6 centos:centos6 sleep 120
+  - sudo docker run --name centos6 centos:centos6 sleep 320
+  - sudo docker ps -a
 
 script:
   - sudo docker exec centos6 cat /etc/issue
