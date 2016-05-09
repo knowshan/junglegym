@@ -1,5 +1,8 @@
 sudo: required
 
+env:
+  - PROJECT='/project'
+
 services:
   - docker
 
@@ -9,15 +12,16 @@ before_install:
   - sudo docker pull centos:centos6
 
 install:
-  - sudo docker run -d --name centos6 centos:centos6 sleep 120
+  - sudo docker run -d -it -e TRAVIS_REPO_SLUG="${TRAVIS_REPO_SLUG}" -v $PWD:${PROJECT} --name centos6 centos:centos6
   - sudo docker ps -a
 
 script:
-  - sudo docker exec centos6 cat /etc/issue
-  - sudo docker exec centos6 ls -l
-  - sudo docker exec centos6 pwd
-  - sudo docker exec centos6 df -h
-  - sudo docker exec centos6 find -name hello.sh
+  - ls -l
+  - find
+  - env
+  - sudo docker exec centos6 env
+  - sudo docker exec centos6 /project/src/hello.sh 'Hello World!'
 
 after_script:
   - sudo docker stop centos6
+
