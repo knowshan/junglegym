@@ -4,4 +4,3 @@ Test repo for exploring travis-docker.
 | ---      | ---       |
 | Backtick | ` <br> back        |
 | Pipe     | \|        |
-
