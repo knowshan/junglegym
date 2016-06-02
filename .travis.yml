@@ -9,10 +9,10 @@ services:
 language: bash
 
 before_install:
-  - sudo docker pull knowshan/centos6-mkrpm
+  - sudo docker pull knowshan/centos7-mkrpm
 
 install:
-  - sudo docker run -d -it -e WORKSPACE="${WORKSPACE}" -e TRAVIS_REPO_SLUG="${TRAVIS_REPO_SLUG}" -e TRAVIS_BUILD_NUMBER="${TRAVIS_BUILD_NUMBER}" -v $PWD:"${WORKSPACE}" --name centos knowshan/centos6-mkrpm
+  - sudo docker run -d -it -e WORKSPACE="${WORKSPACE}" -e TRAVIS_REPO_SLUG="${TRAVIS_REPO_SLUG}" -e TRAVIS_BUILD_NUMBER="${TRAVIS_BUILD_NUMBER}" -v $PWD:"${WORKSPACE}" --name centos knowshan/centos7-mkrpm
   - sudo docker exec centos rpmdev-setuptree
 
 script:
