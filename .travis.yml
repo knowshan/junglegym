@@ -33,3 +33,4 @@ deploy:
   file: build_$release/*.rpm
   on:
     repo: knowshan/junglegym
+    tags: false
