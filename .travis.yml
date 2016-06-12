@@ -34,3 +34,4 @@ deploy:
   on:
     repo: knowshan/junglegym
     tags: false
+    all_branches: true
