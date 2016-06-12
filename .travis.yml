@@ -22,8 +22,7 @@ after_script:
   - sudo docker stop centos
 
 before_deploy:
-  - export RELEASE_PKG_FILES=(ls build_$TRAVIS_BUILD_NUMBER/*.rpm)
-  - echo "Matched ${RELEASE_PKG_FILES[@]} files"
+  - find ./ -ls
   - env
 
 deploy:
