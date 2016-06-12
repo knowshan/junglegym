@@ -22,7 +22,7 @@ after_script:
   - sudo docker stop centos
 
 before_deploy:
-  - export RELEASE_PKG_FILES=(build_$release/*.rpm)
+  - export RELEASE_PKG_FILES=(ls build_$TRAVIS_BUILD_NUMBER/*.rpm)
   - echo "Matched ${RELEASE_PKG_FILES[@]} files"
 
 deploy:
@@ -31,7 +31,7 @@ deploy:
   skip_cleanup: true
   api_key:
     secure: HFe9dqJCLnJauR2q4vaOm5PgJcfpRyVBRL+7XkM/Y/e9rYx6TeJdVv6zDpvFIhC14ixgD+s+xy9XgZROdbwg7lLGU6wHywxTAj0iEDH6L4kTwrpU/SHmJ8VMyWuZfl3uh/bY32WpZlUQvuGKW2bw4vM3wlKg6Nrq0Jr2A6MimTD2PYDwO0v7KIcy0txaPpS4bNN/3rzKu3ThRhwN1omgb0114ifx0O4f7lxKZ1CBTkQCCyh6VzgN3gl/vDzpNSpMxsBcM+LPPKbRLqIT5KRc+cPcE6sv9KhDF4pXQ/3T7L28bX7tLFqciZc3DwNAefG1TOoLysRseXjV6dVBkLEBv+yJWilSeHg/8Af2PVkRnM97DNLsAkpomrNjgbillR6KYieGTlUOsKJmOk1OMGLtnpGGo/A8ICJOkX/Wn7o74QNOZ3xOE9qP0AQ3sxonQhM6u38y1hzeTbT9pFSztXacwvczatz5ajs1QtGZIb3tB4n/mVVmjZ2DX5t7lPnqC+Yveq0gT2DWRXwgSQNZUHBB4SPcR+aiYzNBNR5jsXhpCrho7BLtxBy8vnT0BCcxFdbG0Pu5vTYX/TikNCOSEadEawDu8nlFRlLwNMG+6ySsCFl1ewv6grsZ8f0U4ip4WkbRg9meJzUo41epkpSUmcs/+oQqb8wM3Nit+mvUBJ/m6yM=
-  file: build_$release/*.rpm
+  file: build_${TRAVIS_BUILD_NUMBER}/*.rpm
   on:
     repo: knowshan/junglegym
     tags: false
