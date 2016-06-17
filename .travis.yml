@@ -12,6 +12,7 @@ before_install:
   - sudo docker pull knowshan/centos7-mkrpm
 
 install:
+  - sudo docker run -d -it -e WORKSPACE="${WORKSPACE}" -v $PWD:"${WORKSPACE}" --name centos knowshan/centos7-mkrpm
   - sudo docker exec centos rpmdev-setuptree
 
 script:
