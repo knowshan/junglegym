@@ -12,11 +12,11 @@ before_install:
   - sudo docker pull knowshan/centos7-mkrpm
 
 install:
-  - sudo docker run -d -it -e WORKSPACE="${WORKSPACE}" -e TRAVIS_REPO_SLUG="${TRAVIS_REPO_SLUG}" -e TRAVIS_BUILD_NUMBER="${TRAVIS_BUILD_NUMBER}" -v $PWD:"${WORKSPACE}" --name centos knowshan/centos7-mkrpm
   - sudo docker exec centos rpmdev-setuptree
 
 script:
-  - sudo docker exec centos mkrpm
+  - sudo docker exec centos env
+  - sudo docker exec GIT_DIR=/project/.git git remote -v
 
 after_script:
   - sudo docker stop centos
