@@ -18,6 +18,7 @@ install:
 script:
   - sudo docker exec centos env
   - sudo docker exec centos find /project -ls
+  - sudo docker exec centos ls -la /
   - sudo docker exec centos ls -la /project/
   - sudo docker exec centos /bin/bash GIT_DIR=/project/.git git remote -v
 
