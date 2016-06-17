@@ -17,7 +17,7 @@ install:
 
 script:
   - sudo docker exec centos env
-  - sudo docker exec GIT_DIR=/project/.git git remote -v
+  - sudo docker exec centos GIT_DIR=/project/.git git remote -v
 
 after_script:
   - sudo docker stop centos
