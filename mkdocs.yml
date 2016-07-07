@@ -1,0 +1,5 @@
+site_name: junglegym
+pages:
+- Home: index.md
+- About: tests.md
+theme: readthedocs
