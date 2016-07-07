@@ -1,0 +1,34 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "First page\n\n\nSecond section\n\n\n\n\nOne\n\n\nTwo", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#first-page", 
+            "text": "", 
+            "title": "First page"
+        }, 
+        {
+            "location": "/#second-section", 
+            "text": "One  Two", 
+            "title": "Second section"
+        }, 
+        {
+            "location": "/tests/", 
+            "text": "Test page\n\n\nTest 1\n\n\n\n\nOne\n\n\nTwo", 
+            "title": "About"
+        }, 
+        {
+            "location": "/tests/#test-page", 
+            "text": "", 
+            "title": "Test page"
+        }, 
+        {
+            "location": "/tests/#test-1", 
+            "text": "One  Two", 
+            "title": "Test 1"
+        }
+    ]
+}
